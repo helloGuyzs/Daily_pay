@@ -4,7 +4,8 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   
     background-color: rgb(232, 131, 131);
     border-radius: 20px;    
-    margin-top: 200px;    
+    margin: 50px auto; 
+    width: 600px;  
 
 } 
 
@@ -23,6 +24,8 @@ Form input{
     outline: none;
     height: 30px;
     font-size: 20px;
+    padding: 2px 8px;
+    
 }
 
 Form label{
@@ -43,9 +46,16 @@ Form label{
 
     background-color: rgb(16, 77, 218);
     border: none;
+    color: white;
     border-radius: 4px;
     cursor: pointer;
     height: 30px;
-    width: 100px;    
+    width: 100px; 
+    
+    &:hover{
+        
+        background-color: rgb(68, 110, 209);
+
+    }
 
 }
