@@ -49,7 +49,7 @@ export default function ShowUsers( props) {
         if (toCheck === "") {
             setShowUser(props.user);
         } else {
-            const filtered = props.user.filter(data => data.managerId.toLowerCase().includes(toCheck));
+            const filtered = props.user.filter(data => data.managerId?.toLowerCase().includes(toCheck));
             setShowUser(filtered);
         }
     };
