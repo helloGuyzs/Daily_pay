@@ -3,6 +3,7 @@ import './App.css';
 import Model from './components/Model';
 import { collection, getDoc, getDocs } from 'firebase/firestore';
 import { db } from './firebase';
+import ShowUsers from './components/ShowUsers';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
         })
   
         console.log(userList);
+        setuser(userList);
         
       } catch (error) {
         console.log('error');
@@ -48,6 +50,7 @@ function App() {
     <>
 
       <Model/>
+      <ShowUsers user={user} />
 
     </>
   );

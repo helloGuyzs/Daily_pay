@@ -1,0 +1,65 @@
+.outer{
+
+    height: 100px;
+    background-color: #f2f2f2; 
+     
+    
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 0 auto; 
+}
+
+th, td {
+    text-align: left; 
+    padding: 8px; 
+    border-bottom: 1px solid #ddd; 
+}
+
+thead{
+
+    font-size: 25px;
+    font-weight: 600;
+
+}
+tbody{
+
+    font-size: 15px;
+    font-weight: 100px;
+
+}
+
+th {
+    background-color: #f2f2f2; 
+    color: #333; 
+}
+
+.actions{
+
+    display: flex;
+    gap: 8px;
+}
+
+button{
+
+    background-color: rgb(222, 33, 33);
+    width: 100px;
+    height: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+    border-radius: 10px;
+    /* border: none; */
+    
+    &:hover{
+        
+        background-color: rgb(228, 88, 88);
+    }
+    
+
+}
+
+
+
+

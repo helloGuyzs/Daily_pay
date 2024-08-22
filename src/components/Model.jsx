@@ -29,6 +29,7 @@ export default function Model() {
 
         try {
 
+            
             const userRef= collection(db,"Users");
             await addDoc(userRef,{
                 ...values,
@@ -81,7 +82,7 @@ export default function Model() {
 
                     </div>
                     <div className={styles.input}>
-                        <label htmlFor="PAN CARD">PAN CARD</label>                        
+                        <label htmlFor="PAN CARD">Pan Card</label>                        
                         <Field  name="panCard" placeholder="Pan Card"></Field>
                         <ErrorMessage name="panCard" component="div" className={styles.error} />
 
