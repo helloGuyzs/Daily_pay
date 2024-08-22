@@ -2,10 +2,12 @@
     
     border: 1px solid rgba(255, 255, 255, 0.2); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);   
-    background-color: rgb(232, 131, 131);
+    background-color: rgb(101, 215, 81);
     border-radius: 20px;    
     margin: 50px auto; 
     width: 600px;  
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
 
 } 
 
@@ -25,6 +27,9 @@ Form input{
     height: 30px;
     font-size: 20px;
     padding: 2px 8px;
+    border-radius: 10px; 
+    border: none ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     
 }
 
@@ -38,7 +43,7 @@ Form label{
     display: flex;
     flex-direction: column;
     gap: 4px;
-    width: 400px;  
+    width: 400px; 
 
 }
 
@@ -51,11 +56,20 @@ Form label{
     cursor: pointer;
     height: 30px;
     width: 100px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
     
     &:hover{
         
         background-color: rgb(68, 110, 209);
 
     }
+
+}
+
+.error{
+
+    color: rgb(222, 0, 0);
+    font-size: 15px;
+    padding: 4px;
 
 }
