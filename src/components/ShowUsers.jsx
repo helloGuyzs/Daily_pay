@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './ShowUsers.module.css'
+import styless from './Search.module.css'
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase';
 
 export default function ShowUsers( props) {
+
+    const [ showUser , setShowUser] = useState(props.user);
 
     const formatDate = (timestamp) => {
         if (!timestamp || !timestamp.seconds) {
@@ -30,8 +33,35 @@ export default function ShowUsers( props) {
 
     }
 
+    const updateCurrentUser= (data)=>{
+
+        props.setUpdate(true);
+        props.setUpdateContact(data);
+        console.log(props.updateContact)
+        console.log(props.toUpdate)
+        
+
+    }
+
+    const filterManagerId = (event) => {
+        const toCheck = event.target.value.trim().toLowerCase();
+
+        if (toCheck === "") {
+            setShowUser(props.user);
+        } else {
+            const filtered = props.user.filter(data => data.managerId.toLowerCase().includes(toCheck));
+            setShowUser(filtered);
+        }
+    };
+
   return (
     <>
+
+        <div className={styless.outer}>
+
+            <input type="text" placeholder='Search By manager Id' onChange={filterManagerId}/>
+
+        </div>
 
         <div className={styles.outer}>
 
@@ -52,7 +82,7 @@ export default function ShowUsers( props) {
 
                 {
 
-                    props.user.map((data ,id)=>{
+                    showUser?.map((data ,id)=>{
 
                         return (
 
@@ -60,11 +90,11 @@ export default function ShowUsers( props) {
                                 <th>{data.name}</th>
                                 <th>{data.mobileNumber}</th>
                                 <th>{data.panCard}</th>
-                                <th>{data.id}</th>
+                                <th>{data.managerId}</th>
                                 <th>{formatDate(data.createdAt)}</th>   
                                 <th>{formatDate(data.updatededAt)}</th>
                                 <th className={styles.actions}>
-                                    <button>Update</button>
+                                    <button onClick={()=>updateCurrentUser(data)}>Update</button>
                                     <button onClick={()=>deleteUser(data.id)}>Delete</button>
                                 </th>
                                 
