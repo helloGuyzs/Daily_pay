@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Model from './components/Model';
-import { collection, getDoc, getDocs } from 'firebase/firestore';
+import { collection, getDoc, getDocs, onSnapshot } from 'firebase/firestore';
 import { db } from './firebase';
 import ShowUsers from './components/ShowUsers';
 
@@ -20,18 +20,25 @@ function App() {
   
         const userSnapshot = await getDocs(userRef);
 
-        const userList= userSnapshot.docs.map((doc)=>{
+        onSnapshot(userRef, (snapshot)=>{
 
-          return {
 
-            id: doc.id,          
-
-            ...doc.data()
-          }
-        })
+          const userList= snapshot.docs.map((doc)=>{
   
-        console.log(userList);
-        setuser(userList);
+            return {
+  
+              id: doc.id,          
+  
+              ...doc.data()
+            };
+          });
+    
+          console.log(userList);
+          setuser(userList);
+
+
+        });
+
         
       } catch (error) {
         console.log('error');

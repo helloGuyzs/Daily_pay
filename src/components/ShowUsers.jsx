@@ -1,5 +1,7 @@
 import React from 'react'
 import styles from './ShowUsers.module.css'
+import { deleteDoc, doc } from 'firebase/firestore';
+import { db } from '../firebase';
 
 export default function ShowUsers( props) {
 
@@ -14,7 +16,19 @@ export default function ShowUsers( props) {
           year: 'numeric', month: '2-digit', day: '2-digit',
           hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
         });
-      };
+    };
+
+    const deleteUser= async(id)=>{
+
+        try {
+            
+            await deleteDoc(doc(db,"Users" , id))
+
+        } catch (error) {
+            console.log("Error in deleting user")
+        }
+
+    }
 
   return (
     <>
@@ -51,7 +65,7 @@ export default function ShowUsers( props) {
                                 <th>{formatDate(data.updatededAt)}</th>
                                 <th className={styles.actions}>
                                     <button>Update</button>
-                                    <button>Delete</button>
+                                    <button onClick={()=>deleteUser(data.id)}>Delete</button>
                                 </th>
                                 
                             </tr>
