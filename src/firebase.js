@@ -2,13 +2,14 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
+
 const firebaseConfig = {
-  apiKey: "AIzaSyA6Uh8Q3C4TOWWVfS2iaCJeBe8eRajjVxQ",
-  authDomain: "daily-pe-82261.firebaseapp.com",
-  projectId: "daily-pe-82261",
-  storageBucket: "daily-pe-82261.appspot.com",
-  messagingSenderId: "237203250316",
-  appId: "1:237203250316:web:5e6d362e87f47a528a6fa9"
+  apiKey: "AIzaSyCUQUUYS4JvDbA3ezQan-Zbt-Z851Se-aI",
+  authDomain: "dailpe-a18fe.firebaseapp.com",
+  projectId: "dailpe-a18fe",
+  storageBucket: "dailpe-a18fe.appspot.com",
+  messagingSenderId: "733510380530",
+  appId: "1:733510380530:web:7c44a1e8d8f9e4fbaad96b"
 };
 
 export const app = initializeApp(firebaseConfig);
